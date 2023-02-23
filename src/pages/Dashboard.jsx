@@ -8,7 +8,7 @@ import Intro from '../components/Intro'
 import Table from '../components/Table'
 
 // helper functions
-import { createBudget, createExpense, fetchData } from '../helpers'
+import { createBudget, createExpense, deleteItem, fetchData } from '../helpers'
 
 // loader
 export function dashboardLoader(){
@@ -59,6 +59,21 @@ export async function dashboardAction({request}) {
       return toast.success(`Expense ${values.newExpense}created successfully`)
     } catch (error) {
       throw new Error("There was a problem creating your Expense.")
+    }
+  }
+
+
+  if(_action === "deleteExpense") {
+    try {
+      // create Expense
+      deleteItem({
+        key: "expenses",
+        id: values.expenseId
+      })
+
+      return toast.success("Expense Deleted successfully")
+    } catch (error) {
+      throw new Error("There was a problem deleting your Expense.")
     }
   }
 

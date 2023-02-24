@@ -295,6 +295,11 @@ main {
   place-items: start;
 }
 
+.link{
+  text-decoration: none;
+  color: inherit;
+}
+
 /* navbar */
 nav {
   display: -webkit-box;

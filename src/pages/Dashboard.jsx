@@ -23,6 +23,7 @@ export function dashboardLoader(){
 export async function dashboardAction({request}) {
   const data = await request.formData();
   const {_action, ...values} = Object.fromEntries(data)
+  
   if(_action === "newUser") {
     try {
       localStorage.setItem("userName", JSON.stringify(values.userName))
@@ -65,7 +66,7 @@ export async function dashboardAction({request}) {
 
   if(_action === "deleteExpense") {
     try {
-      // create Expense
+      // delete Expense
       deleteItem({
         key: "expenses",
         id: values.expenseId
@@ -79,8 +80,6 @@ export async function dashboardAction({request}) {
 
 
 }
-
-
 
 
 const Dashboard = () => {

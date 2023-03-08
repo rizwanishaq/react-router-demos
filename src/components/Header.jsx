@@ -1,32 +1,32 @@
 import Container from 'react-bootstrap/Container';
 import {NavLink, Link} from 'react-router-dom'
-import { HeartIcon, ShoppingBagIcon, MagnifyingGlassIcon,Squares2X2Icon} from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon,Squares2X2Icon} from '@heroicons/react/24/outline';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import {FaFacebookF} from 'react-icons/fa'
-import {AiOutlineInstagram} from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineShopping,AiOutlineInstagram,AiOutlineUnorderedList } from 'react-icons/ai';
+
 
 
 const Header = () => {
     return (
-      <Navbar expand="sm" sticky="top"  style={{"backgroundColor": "hsl(var(--bkg))"}}>
-        <Container >
-          <Nav>   
-              <NavLink to="#" className="link">
-                <span><FaFacebookF width={30} /></span>
-              </NavLink>
-            <Nav.Link ><span><AiOutlineInstagram width={30} /></span></Nav.Link>
-          </Nav>
+      <Navbar expand="lg" sticky="top"  style={{"backgroundColor": "hsl(var(--bkg))"}}>
+        <Container className="fluid">
             <Navbar.Brand>
               <Link to="/" aria-label="Go to home" className="link">
                   <span>RiisBi</span>
               </Link>
           </Navbar.Brand>
-          <Nav>   
-            <NavLink to="/something" className='link'><span><Squares2X2Icon width={30} /></span></NavLink>
-            <NavLink to="/cart" className='link'><span><ShoppingBagIcon width={30} /></span></NavLink>
-            <NavLink to="/wishlist" className='link'><span><HeartIcon width={30} /></span></NavLink>
-            <NavLink to="/search" className='link'><span><MagnifyingGlassIcon width={30} /></span></NavLink>
+          <Nav>
+            <NavDropdown title={<span><AiOutlineUnorderedList width={30}/></span>} className="dropdown-toggle">
+                <NavDropdown.Item href="/something"><span><Squares2X2Icon width={30} /></span></NavDropdown.Item>
+                <NavDropdown.Item href="/cart" className='link'><span><AiOutlineShopping width={30} /></span></NavDropdown.Item>
+                <NavDropdown.Item href="/wishlist" className='link'><span><AiOutlineHeart width={30} /></span></NavDropdown.Item>
+                <NavDropdown.Item href="#" className="link"><span><FaFacebookF width={30} /></span></NavDropdown.Item>
+                <NavDropdown.Item href="#" className="link"><span><AiOutlineInstagram width={30} /></span></NavDropdown.Item>
+                
+                </NavDropdown>       
           </Nav>
         </Container>
       </Navbar>

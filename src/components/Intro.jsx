@@ -9,10 +9,10 @@ const Intro = () => {
     <div className='intro'>
         <div>
             <h1>
-                Take Control of <span className="accent">Your Money</span>
+                Take Control of <span className="accent">Your Beauty</span>
             </h1>
             <p>
-                Personal budgeting is the secrete to financial freedeom. Start your journey today.
+                Mask Away your Skin Problems
             </p>
             <Form method="post">
                 <input 

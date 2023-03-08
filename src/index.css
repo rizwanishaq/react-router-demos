@@ -18,6 +18,8 @@ svg {
   pointer-events: none;
 }
 
+
+
 :root {
   /* fonts */
   --fs-200: clamp(0.78rem, calc(0.71rem + 0.35vw), 0.96rem);
@@ -114,6 +116,11 @@ p {
 .muted {
   color: hsl(var(--muted));
 }
+
+
+.dropdown-toggle::after { 
+  content: none; 
+  } 
 
 /* links and buttons */
 
@@ -330,11 +337,11 @@ nav a {
   font-weight: bold;
 }
 
-@media screen and (max-width: 525px) {
+/* @media screen and (max-width: 525px) {
   nav a span {
     display: none;
   }
-}
+} */
 
 /* forms */
 label {
